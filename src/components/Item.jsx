@@ -8,9 +8,11 @@ const Item = ({item,deleteItems,editItems}) => { // never pass {item},{deleteIte
   return (
     <div className='singleItem'>
       <div className='item'>
-        {check? <strike><p>{item.name}</p></strike> :<p>{item.name}</p>}
+        
         
         <input type='checkbox' value={check} onChange={() =>{setChecked(!check) ,editItems(item.id)}}/>
+        
+        {check? <strike><p>{item.name}</p></strike> :<p>{item.name}</p>}
         </div>
         <button onClick={()=>{deleteItems(item.id)}}>Delete</button>
     </div>
